@@ -1,0 +1,228 @@
+/* 
+    CUSTOMIZED DEFAULT SETTINGS
+ */
+ * {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5px; /* Slightly different letter-spacing */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; /* Changed font family */
+}
+body {
+    background-color: #E5E5E5; /* Lighter background for a cleaner look */
+    color: #333333; /* Default text color */
+}
+
+/* NAV BAR SECTION */
+.nav-link {
+    text-decoration: none;
+    color: #F0F0F0; /* Softer white */
+    padding: 12px; /* Slightly larger padding */
+    font-size: 18px; /* Slightly smaller font size */
+    font-weight: 300; /* Adjusted weight */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add subtle text shadow */
+}
+
+.active {
+    font-weight: 600; /* More defined font weight */
+    font-size: larger;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Increased gap for more space */
+    background-color: #3A3A3A; /* Darker shade for modern look */
+    padding: 15px 0; /* Add padding for visual balance */
+    border-bottom: 3px solid #444; /* Stylish border at the bottom */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* IMAGE SLIDER */
+.slider img {
+    width: 100%;
+    border-radius: 15px; /* Slightly larger border radius */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add shadow for images */
+}
+.slider {
+    width: 85%; /* Slightly wider */
+    margin: 40px auto;
+    position: relative;
+}
+.slider-btns {
+    width: 100%;
+    position: absolute;
+    top: 45%; /* Adjusted position */
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+}
+.slider-btn {
+    background-color: rgba(50, 50, 50, 0.8); /* Adjusted color for buttons */
+    padding: 10px; /* Larger padding */
+    font-size: 22px; /* Increased font size */
+    font-weight: 700; /* Bolder */
+    border-radius: 50%; /* Circle button style */
+}
+
+.slider-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1); /* Grow effect on hover */
+    background-color: rgba(20, 20, 20, 0.9);
+}
+
+.content {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60px; /* More spacing for a cleaner look */
+}
+
+.content h2 {
+    margin-bottom: 25px; /* Larger gap between headings and content */
+    font-weight: 400;
+    color: #444; /* Darker text for headings */
+}
+
+.btn {
+    background-color: #2C2C2C; /* Darker, modern button */
+    padding: 8px 12px; /* Adjusted padding for a compact look */
+    border-radius: 5px; /* Smaller, subtler rounding */
+    color: #F9F9F9; /* Softer white */
+    font-weight: 500;
+    border: none; /* Remove border */
+    transition: all 0.3s ease; /* Add smooth transition */
+}
+
+.btn:hover {
+    background-color: #218838; /* Slightly lighter on hover */
+   transform: translateY(-3px); /* Raised effect on hover */
+}
+
+/* FOOTER */
+footer {
+    background-color: #3A3A3A; /* Darker shade for a modern footer */
+    padding: 10px 0; /* More padding for balance */
+    text-align: center;
+    color: #BBBBBB; /* Softer grey for text */
+    font-size: 14px; /* Slightly smaller font size */
+    border-top: 3px solid #444; /* Stylish top border */
+}
+
+/* FORM */
+/* Reset default margins and paddings */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Center container in the middle of the page */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f4f8; /* Light background color */
+}
+
+/* Form container styling */
+.form-container {
+    background-color: #ffffff; /* White background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limit form width */
+}
+
+/* Form headings */
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1900fc;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Label styling */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Input fields */
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Error message styling */
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Submit button */
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Password toggle icon */
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    cursor: pointer;
+}
+
+
+
+input {
+    padding: 8px; /* More padding */
+    border-radius: 8px; /* Slightly more rounded */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Subtle input shadow */
+    border: 1px solid #DDD; /* Soft border */
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #888; /* Different focus color */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 8px rgba(80, 80, 80, 0.3); /* Add focus shadow */
+}
+
+/* NEW SLIDER STYLES */
+.slide {
+    display: none; /* Hide all slides by default */
+}
+
+.slide.active {
+    display: block; /* Show only the active slide */
+}
+
+
+
