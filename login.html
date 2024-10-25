@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/icon.jpg" type="image/jpg">
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav>
+        <a href="home1.html" class="nav-link">Home</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="login.html" class="nav-link active">Login</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+        <section class="image-slider">
+            <div class="slider">
+                <img src="images/image1.jpg" alt="First image" class="slide active">
+                <img src="images/image2.jpg" alt="Second image" class="slide">
+                <img src="images/image3.jpg" alt="Third image" class="slide">
+                <div class="slider-btns">
+                    <div class="slider-btn" id="prevBtn">&#8249; Prev</div>
+                    <div class="slider-btn" id="nextBtn">Next &#8250;</div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Form content -->
+
+        <div class="container">
+            <div class="form-container">
+                <h2>Login</h2>
+                <form id="loginForm" method="POST" onsubmit="submitForm(event)">
+
+                    <div class="form-group">
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" name="userEmail" required placeholder="Your Email">
+                        <div id="userEmailError" class="error-message" style="display: none;">Email is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a Password" required>
+                        <div id="passwordError" class="error-message" style="display: none;">Password is required.</div>
+                        <div class="password-toggle" onclick="togglePasswordVisibility('password')">
+                            <!-- Eye icon for showing and hiding password -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
+                                <ellipse cx="10" cy="10" rx="6" ry="4" fill="#FFF" stroke="#555" stroke-width="1.5"></ellipse>
+                                <circle cx="10" cy="10" r="2.5" fill="#555"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Input for referrer ID -->
+                <input type="hidden" name="ref" value="1">
+
+                <button type="submit" class="submit-btn">Register</button>
+                <div class="form-error" id="formError"></div>
+            </form>
+            </div>
+        </div>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer>
+        Created by Anoeska Hood &copy; 2024
+    </footer>
+
+    <!-- JavaScript -->
+  <script src="java.js"></script>
+
+</body>
+</html>

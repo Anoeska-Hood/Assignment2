@@ -31,10 +31,13 @@
         </div>
     </section>
 
+    <!-- Form content -->
+
     <div class="container">
         <div class="form-container">
             <h2>Register</h2>
-            <form id="registerForm" method="POST" action="registration_handler.php">
+            <form id="registerForm" method="POST" onsubmit="submitForm(event)">
+
                 <div class="form-group">
                     <label for="fullName">Full Name</label>
                     <input type="text" id="fullName" name="fullName" required placeholder="Full Name here">
@@ -81,7 +84,7 @@
             </form>
         </div>
     </div>
-
+    
     </main>
 
     <!-- FOOTER -->
