@@ -11,7 +11,7 @@
 
     <!-- NAV BAR -->
     <nav>
-        <a href="home1.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <a href="register.html" class="nav-link active">Register</a>
         <a href="login.html" class="nav-link">Login</a>
     </nav>
@@ -31,12 +31,14 @@
         </div>
     </section>
 
+    <!-- Section to show when not logged in -->
+    <section id="guestContent">
     <!-- Form content -->
 
     <div class="container">
         <div class="form-container">
             <h2>Register</h2>
-            <form id="registerForm" method="POST" onsubmit="submitForm(event)">
+            <form id="registerForm" method="POST" onsubmit="register(event)">
 
                 <div class="form-group">
                     <label for="fullName">Full Name</label>
@@ -76,14 +78,20 @@
                     </div>
                 </div>
 
-                <!-- Input for referrer ID -->
-                <input type="hidden" name="ref" value="1">
+              
 
                 <button type="submit" class="submit-btn">Register</button>
                 <div class="form-error" id="formError"></div>
             </form>
         </div>
     </div>
+
+    </section>
+
+   <!-- Selection to show when logged in -->
+   <section class="content" id="loggedInContent" style="display: none;">
+    <h1><font size="6">You are already logged in</font></h1>
+    </section>
     
     </main>
 

@@ -13,14 +13,14 @@
 
     <!-- NAV BAR -->
     <nav>
-        <a href="home1.html" class="nav-link active">Home</a>
+        <a href="index.html" class="nav-link active">Home</a>
         <a href="register.html" class="nav-link">Register</a>
         <a href="login.html" class="nav-link">Login</a>
     </nav>
 
     <!-- MAIN CONTENT -->
     <main>
-    
+        
         <section class="image-slider">
             <div class="slider">
                 <img src="images/image1.jpg" alt="First image" class="slide active">
@@ -34,25 +34,29 @@
         </section>
         
 
-    <section class="content">
-        <h1>Welcome to INF164 Bulletin Bord</h1>
+    <!-- Section to show when not logged in -->
+    <section class="content" id="guestContent">
+      
+        <h1><font size="6">Welcome to INF164 Bulletin Board</font></h1>
 
         <br/>
         <br/>
+        </br>
 
-        <p>Login or Register to view bulletin bord</p>
+        <h2>Login or Register to view bulletin board</h2>
 
         <br/>
 
-        <button class="btn">Register</button>
-        <button class="btn">Login</button>
+        <button class="btn" onclick="window.location.href='register.html'">Register</button>
+        <button class="btn" onclick="window.location.href='login.html'">Login</button>
+        
     </section>
 
 
-    <!-- Content to hide when not logged in -->
-     <div id="privateContent">
-    <section class="content">
-        <h1>Welcome ${fullName} to INF 164 Bulletin Bord</h1>
+    <!-- Selection to show when logged in -->
+    
+    <section class="content" id="loggedInContent" style="display: none">
+        <h1>Welcome <span id="userFullName"></span> to INF 164 Bulletin Bord</h1>
 
         <br/>
 
@@ -64,13 +68,7 @@
             <li><font color="red"><b>15 November 2024: Exam</b></font></li>
         </ul>
 
-        <br/>
-
-        <button class="btn">Register</button>
-        <button class="btn">Login</button>
     </section>
-    </div>
-
     </main>
 
     <!-- FOOTER -->
