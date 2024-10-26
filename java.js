@@ -1,5 +1,4 @@
-// SLIDERS.js
-
+// PICTURE SLIDERS
 let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
@@ -17,150 +16,143 @@ document.getElementById('prevBtn').addEventListener('click', function() {
 });
 
 
-//REGISTER FORM.js
 
+
+
+// FUNCTION TO HANDLE USER REGISTRATION
 function register(event) {
-   
+    event.preventDefault();
 
-    // Gather form data
     const fullName = document.getElementById('fullName').value;
     const userEmail = document.getElementById('userEmail').value;
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Basic validation
-    if (!fullName) {
-        document.getElementById('fullNameError').style.display = 'block';
+    // Validation
+    if (!fullName || !userEmail || !password || !confirmPassword) {
+        document.getElementById('formError').textContent = 'All fields are required.';
         return;
-    } else {
-        document.getElementById('fullNameError').style.display = 'none';
     }
 
-    if (!userEmail) {
-        document.getElementById('userEmailError').style.display = 'block';
-        return;
-    } else {
-        document.getElementById('userEmailError').style.display = 'none';
-    }
-
-    if (!password) {
-        document.getElementById('passwordError').style.display = 'block';
-        return;
-    } else {
-        document.getElementById('passwordError').style.display = 'none';
-    }
-
+    // Check if password match
     if (password !== confirmPassword) {
-        document.getElementById('confirmPasswordError').style.display = 'block';
+        alert('Passwords do not match.');
         return;
-    } else {
-        document.getElementById('confirmPasswordError').style.display = 'none';
     }
 
-    // Check if passwords match
-    if (password !== confirmPassword) {
-        alert("Passwords do not match! Please try again."); // Display alert if passwords don’t match
-        document.getElementById('confirmPasswordError').style.display = 'block';
+    // Check if user is already registered
+    const storedEmail = localStorage.getItem('userEmail');
+    if (storedEmail === userEmail) {
+        alert(`User with email ${userEmail} already exists. Please log in.`);
         return;
-    } else {
-        document.getElementById('confirmPasswordError').style.display = 'none';
     }
 
-    // Check if the email already exists in localStorage
-    if (localStorage.getItem(userEmail)) {
-        alert(`User with email ${userEmail} already exists. Please login.`);
-        return; // Prevent registration
-    }
+    // Store user data in local storage
+    localStorage.setItem('fullName', fullName);
+    localStorage.setItem('userEmail', userEmail);
+    localStorage.setItem('userPassword', password);
 
-    // Store user details in localStorage
-    const userDetails = {
-        name: fullName,
-        password: password
-    };
-    localStorage.setItem(userEmail, JSON.stringify(userDetails));
-    
-    // After registration, log user by storing username value in localStorage
-    localStorage.setItem('username', fullName);
-    alert("Registration successful");
-
-    // Redirect to home page
-    window.location.href = 'index.html';
+    alert('Registration successful! You can now log in.');
+    window.location.href = 'login.html'; // Redirect to the login page
 }
 
-//eye-icon js.
 
-function togglePasswordVisibility(fieldId) {
-    const passwordField = document.getElementById(fieldId);
-    if (passwordField.type === 'password') {
-        passwordField.type = 'text';
-    } else {
-        passwordField.type = 'password';
-    }
+
+
+
+// FUNCTION TO TOGGLE PASSWORD VISIBILITY
+function togglePasswordVisibility(passwordFieldId) {
+    const passwordField = document.getElementById(passwordFieldId);
+    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordField.setAttribute('type', type);
 }
 
-//LOGIN FORM.js
 
+
+
+// FUNCTION TO HANDLE USER LOGIN
 function login(event) {
-    // Prevent the form from submitting the traditional way
     event.preventDefault();
 
-    // Gather login form data
     const userEmail = document.getElementById('userEmail').value;
     const password = document.getElementById('password').value;
 
-    // Check if the email exists in localStorage
-    const storedUser = localStorage.getItem(userEmail);
+    // Retrieve stored user data from local storage
+    const storedEmail = localStorage.getItem('userEmail');
+    const storedPassword = localStorage.getItem('userPassword');
 
-    if (!storedUser) {
-        // Email not found, alert user to register
-        alert("Email not found. Please register.");
+    // Validation
+    if (!userEmail || !password) {
+        document.getElementById('formError').textContent = 'All fields are required.';
         return;
     }
 
-    // Parse the stored user data to get the password
-    const userDetails = JSON.parse(storedUser);
-
-    // Check if the entered password matches the stored password
-    if (userDetails.password === password) {
-        // Store username in localStorage (logged-in user)
-        localStorage.setItem('username', userDetails.name);
-        alert("Login successful");
-
-        // Redirect to home page
-        window.location.href = 'index.html';
-    } else {
-        // Password mismatch
-        alert("Invalid password. Please try again.");
+    if (!storedEmail) {
+        alert('Email not found. Please register.');
+        return;
     }
 
-     // Redirect or reload to show the logged-in content
-     window.location.reload(); // This will trigger DOMContentLoaded again
+    if (userEmail === storedEmail && password === storedPassword) {
+        // Login successful
+        localStorage.setItem('isLoggedIn', "true");
+        localStorage.setItem('username', storedEmail);
+        alert('Login successful!');
+        window.location.href = 'index.html'; // Redirect to the home page
+    } else {
+        alert('Invalid password. Please try again');
+    }
 }
 
-//CHECK IF USER IS LOGGED IN.js
 
+
+
+// FUNCTION TO DISPLAY CONTENT BASED ON LOGIN STATUS
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user is logged in by looking for email
-    const userEmail = localStorage.getItem('userEmail');
-    const fullName = localStorage.getItem('fullName'); // Used only for display if logged in
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-    //use this for the index.html page
-    if (userEmail) {
-        // User is logged in, show bulletin board
-        document.getElementById('guestContent').style.display = 'none';
-        document.getElementById('loggedInContent').style.display = 'block';
+    if (isLoggedIn) {
+        // User is logged in, show logged-in content
+        if (document.getElementById('userFullName')) {
+            document.getElementById('userFullName').textContent = localStorage.getItem('fullName');
+        }
 
-        // Display user's full name if available, else just the email
-        document.getElementById('userFullName').textContent = fullName || userEmail;
+        if (document.getElementById('guestContent')) {
+            document.getElementById('guestContent').style.display = 'none';
+        }
+        if (document.getElementById('loggedInContent')) {
+            document.getElementById('loggedInContent').style.display = 'block';
+        }
     } else {
-        // User is not logged in, show registration prompt
-        document.getElementById('guestContent').style.display = 'block';
-        document.getElementById('loggedInContent').style.display = 'none';
+        // User is not logged in, show guest content
+        if (document.getElementById('guestContent')) {
+            document.getElementById('guestContent').style.display = 'block';
+        }
+        if (document.getElementById('loggedInContent')) {
+            document.getElementById('loggedInContent').style.display = 'none';
+        }
     }
-
-    });
-
+});
 
 
 
 
+// FUNCTION TO HANDLE THE LOGIN AND LOGOUT NAV BAR
+document.addEventListener("DOMContentLoaded", () => {
+    const navLoginLink = document.querySelector(".nav-link[href='login.html']");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    if (isLoggedIn && navLoginLink) {
+        // Change "Login" to "Logout"
+        navLoginLink.textContent = "Logout";
+        navLoginLink.href = "#";
+        navLoginLink.addEventListener("click", () => {
+            // Log the user out
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("username");
+            alert("You have been logged out.");
+            location.reload(); // Refresh the page to reset the view
+        });
+    }
+});
+
+//localStorage.clear();
