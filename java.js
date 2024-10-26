@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isLoggedIn) {
         // User is logged in, show logged-in content
         if (document.getElementById('userFullName')) {
-            document.getElementById('userFullName').textContent = localStorage.getItem('fullName');
+            document.getElementById('userFullName').textContent = localStorage.getItem('fullName'); 
         }
 
         if (document.getElementById('guestContent')) {
