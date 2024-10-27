@@ -3,17 +3,23 @@ let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
-document.getElementById('nextBtn').addEventListener('click', function() {
+document.getElementById('nextBtn').addEventListener('click', showNextSlide);
+document.getElementById('prevBtn').addEventListener('click', showPreviousSlide);
+
+function showNextSlide() {
     slides[currentIndex].classList.remove('active');
     currentIndex = (currentIndex + 1) % totalSlides; // Loop back to the first slide
     slides[currentIndex].classList.add('active');
-});
+}
 
-document.getElementById('prevBtn').addEventListener('click', function() {
+function showPreviousSlide() {
     slides[currentIndex].classList.remove('active');
     currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Loop back to the last slide
     slides[currentIndex].classList.add('active');
-});
+}
+
+// Auto-rotation every 5 seconds
+setInterval(showNextSlide, 5000);
 
 
 
@@ -52,8 +58,11 @@ function register(event) {
     localStorage.setItem('userEmail', userEmail);
     localStorage.setItem('userPassword', password);
 
-    alert('Registration successful! You can now log in.');
-    window.location.href = 'login.html'; // Redirect to the login page
+     // Login successful
+     localStorage.setItem('isLoggedIn', "true");
+     localStorage.setItem('username', storedEmail);
+     alert('Registration successful!');
+     window.location.href = 'index.html'; // Redirect to the home page
 }
 
 

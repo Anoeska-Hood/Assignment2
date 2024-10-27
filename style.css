@@ -1,41 +1,43 @@
 /* 
-    CUSTOMIZED DEFAULT SETTINGS
+    CUSTOMIZED SETTINGS
  */
  * {
     margin: 0;
     padding: 0;
-    letter-spacing: 0.5px; /* Slightly different letter-spacing */
+    letter-spacing: 0.5px; 
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; /* Changed font family */
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; 
 }
 body {
-    background-color: #E5E5E5; /* Lighter background for a cleaner look */
+    background-color: #E5E5E5; /* Background colour of whole document */
     color: #333333; /* Default text color */
 }
+
+
 
 /* NAV BAR SECTION */
 .nav-link {
     text-decoration: none;
-    color: #F0F0F0; /* Softer white */
-    padding: 12px; /* Slightly larger padding */
-    font-size: 18px; /* Slightly smaller font size */
-    font-weight: 300; /* Adjusted weight */
+    color: #F0F0F0; 
+    padding: 12px; /* Padding */
+    font-size: 18px; 
+    font-weight: 300;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add subtle text shadow */
 }
 
 .active {
     font-weight: 600; /* More defined font weight */
-    font-size: larger;
-    text-transform: uppercase;
+    font-size: larger; /* Larger font size */
+    text-transform: uppercase; /* Change to upperacse */
 }
 
 nav {
     display: flex;
     justify-content: center;
     gap: 50px; /* Increased gap for more space */
-    background-color: #3e2f2f; /* Darker shade for modern look */
-    padding: 15px 0; /* Add padding for visual balance */
-    border-bottom: 3px solid #444; /* Stylish border at the bottom */
+    background-color: #3e2f2f;
+    padding: 15px 0; /* Add padding */
+    border-bottom: 3px solid #444; 
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
 
@@ -46,36 +48,36 @@ nav {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add shadow for images */
 }
 .slider {
-    width: 85%; /* Slightly wider */
+    width: 85%; 
     margin: 40px auto;
     position: relative;
 }
 .slider-btns {
     width: 100%;
     position: absolute;
-    top: 45%; /* Adjusted position */
+    top: 45%; 
     color: #FFFFFF;
     display: flex;
     justify-content: space-between;
 }
 .slider-btn {
-    background-color: rgba(50, 50, 50, 0.8); /* Adjusted color for buttons */
-    padding: 10px; /* Larger padding */
-    font-size: 22px; /* Increased font size */
-    font-weight: 700; /* Bolder */
-    border-radius: 50%; /* Circle button style */
+    background-color: rgba(50, 50, 50, 0.8); 
+    padding: 10px; 
+    font-size: 22px; 
+    font-weight: 700; 
+    border-radius: 50%; 
 }
 
 .slider-btn:hover {
     cursor: pointer;
-    transform: scale(1.1); /* Grow effect on hover */
+    transform: scale(1.1); 
     background-color: rgba(20, 20, 20, 0.9);
 }
 
 .content {
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 60px; /* More spacing for a cleaner look */
+    margin-bottom: 60px; 
 }
 
 .content h2 {
@@ -85,28 +87,28 @@ nav {
 }
 
 .btn {
-    background-color: #2C2C2C; /* Darker, modern button */
-    padding: 8px 12px; /* Adjusted padding for a compact look */
-    border-radius: 5px; /* Smaller, subtler rounding */
-    color: #F9F9F9; /* Softer white */
+    background-color: #2C2C2C; 
+    padding: 8px 12px; 
+    border-radius: 5px; 
+    color: #F9F9F9; 
     font-weight: 500;
-    border: none; /* Remove border */
-    transition: all 0.3s ease; /* Add smooth transition */
+    border: none; 
+    transition: all 0.3s ease; 
 }
 
 .btn:hover {
-    background-color: #218838; /* Slightly lighter on hover */
+    background-color: #218838; /* Change colour on hover */
    transform: translateY(-3px); /* Raised effect on hover */
 }
 
 /* FOOTER */
 footer {
-    background-color: #3e2f2f; /* Darker shade for a modern footer */
-    padding: 10px 0; /* More padding for balance */
+    background-color: #3e2f2f; 
+    padding: 10px 0;
     text-align: center;
-    color: #BBBBBB; /* Softer grey for text */
-    font-size: 14px; /* Slightly smaller font size */
-    border-top: 3px solid #444; /* Stylish top border */
+    color: #BBBBBB; 
+    font-size: 14px; 
+    border-top: 3px solid #444; 
 }
 
 /* FORM */
@@ -123,8 +125,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95vh; /* Full viewport height */
-    background-color: #E5E5E5; /* Light background color */
+    height: 95vh; 
+    background-color: #E5E5E5; 
 }
 
 /* Form container styling */
@@ -202,17 +204,17 @@ h2 {
 
 
 input {
-    padding: 8px; /* More padding */
-    border-radius: 8px; /* Slightly more rounded */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Subtle input shadow */
-    border: 1px solid #DDD; /* Soft border */
+    padding: 8px; 
+    border-radius: 8px; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #DDD; 
     font-size: 14px;
 }
 
 input:focus {
-    border-color: #888; /* Different focus color */
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 8px rgba(80, 80, 80, 0.3); /* Add focus shadow */
+    border-color: #888; 
+    outline: none; 
+    box-shadow: 0 0 8px rgba(80, 80, 80, 0.3); 
 }
 
 /* NEW SLIDER STYLES */
